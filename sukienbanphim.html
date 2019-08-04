@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>sự kiện bàn phím</title>
+</head>
+<body onload="doReady()">
+<img id="nobita" src="../image/1.png" style="position: absolute;left:0;top: 0;" height="100" width="80"/>
+
+
+<script>
+    function len() {
+        let element =document.getElementById("nobita");
+        element.style.top=parseInt(element.style.top)-10+'px';
+    }
+    function xuong() {
+        let element=document.getElementById("nobita");
+        element.style.top=parseInt(element.style.top)+10+'px';
+    }
+    function sangtrai() {
+        let element=document.getElementById("nobita");
+        element.style.left=parseInt(element.style.left)-10+'px';
+
+    }
+    function sangphai() {
+        let element=document.getElementById("nobita");
+        element.style.left=parseInt(element.style.left)+10+'px';
+    }
+    function moveimg(a) {
+        switch (a.which) {
+            case 38:
+                len();
+                break;
+            case 40:
+                xuong();
+                break;
+            case 37:
+                sangtrai();
+                break;
+            case 39:
+                sangphai();
+                break;
+        }
+    }
+    function doReady() {
+        window.addEventListener('keydown',moveimg);
+    }
+
+</script>
+</body>
+</html>
